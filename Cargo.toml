@@ -1,0 +1,22 @@
+[package]
+name = "steamworks"
+version = "0.1.0"
+description = "Steamworks"
+authors = ["Julien Andreu"]
+repository = "https://github.com/julienandreu/steamworks"
+default-run = "steamworks"
+edition = "2021"
+rust-version = "1.60"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+
+[dependencies]
+
+[profile.release]
+panic = "abort"   # Strip expensive panic clean-up logic
+codegen-units = 1 # Compile crates one after another so the compiler can optimize better
+lto = true        # Enables link to optimizations
+opt-level = 3
+strip = true      # Remove debug symbols
